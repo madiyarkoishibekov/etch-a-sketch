@@ -21,8 +21,14 @@ function drawGrid(sideLength) {
     }
 
     const cells = document.querySelectorAll('.cell');
-    const cellStyle = getComputedStyle(cells);
-    const sideL
+    const cellStyle = getComputedStyle(cells[0]);
+    const cellLength = parseInt(cellStyle.width.split('px')[0]);
+    if (sideLength * cellLength >= container.offsetWidth)
+    {
+        window.alert('Square side length you entered too big. Try smaller number.');
+        drawGrid(getSideLengthFromUser());
+
+    }
     for (let i = 0; i < cells.length; i++) {
         cells[i].addEventListener('mouseover', () => {
             cells[i].style.backgroundColor = 'aqua';
