@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container>.cell {
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+  }
+
+.hide {
+    width: 100%;
+    border: 0;
+    height: 0;
+}
